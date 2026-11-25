@@ -1,0 +1,9 @@
+image_manifest_digest=sha256:80069ab6126f54e1956f45af09f1eb6f359cfd4a8595a69ac9f813a80ff1b55b
+config_digest=sha256:00dd8c7a1c807ea52e8505f99a5c0822a78e1c4cd4f611241f900a1008e1ab46
+tag=readystack/zabbix:7.4.16-CE-ubuntu24.04-r5
+probe_port=10051
+probe_path=/
+probe_timeout=180
+probe_exec=bash -c 'exec 3<>/dev/tcp/127.0.0.1/10051'
+verify_boot=skip
+verify_boot_reason=this image needs pg (not part of this archive); boot it with your own services as the admin handbook describes

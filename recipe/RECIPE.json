@@ -1,0 +1,268 @@
+{
+ "schema": "readystack.recipe.v1",
+ "slug": "zabbix",
+ "tag": "7.4.16-CE-ubuntu24.04-r5",
+ "tarball": "ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r5.tar.gz",
+ "tarball_sha256": "126249b5ea624c1ca23f454daae3ef4bc362cdb562b04e60c562e1971b407abf",
+ "kit_root": "7.4.16-CE-ubuntu24.04-r5",
+ "generated_at": "2026-11-25T07:09:49Z",
+ "generator": "KitForge release/recipe_publish.py",
+ "dockerfile": "Dockerfile.offline.pinned",
+ "build_script": "BUILD_OFFLINE.sh",
+ "preview_lines": 24,
+ "pins": {
+  "upstream": {
+   "repo": "https://github.com/zabbix/zabbix",
+   "ref": "7.4.16",
+   "commit": "b90dda2ec5983a92c9671550b5e32947cf241cd2",
+   "url": "https://github.com/zabbix/zabbix/tree/b90dda2ec5983a92c9671550b5e32947cf241cd2",
+   "from": "docs/provenance/BUILD_RECIPE.json"
+  },
+  "fetches": [
+   {
+    "kind": "git",
+    "url": "https://github.com/zabbix/zabbix",
+    "ref": "7.4.16"
+   }
+  ],
+  "bases": [
+   {
+    "ref": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+    "image": "ubuntu:24.04",
+    "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+   }
+  ],
+  "toolchain": {
+   "buildkit": "moby/buildkit:v0.31.2",
+   "buildkit_image_digest": "sha256:e0e67ea9c4bb07bdef683e29f70f3b623d1eb9c82274a9ec04e6bb0511449fb0",
+   "builder_images": [
+    "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+   ]
+  },
+  "build_method": "source-rebuild-c",
+  "source_date_epoch": 1795543300,
+  "source_date_epoch_utc": "2026-11-24T18:01:40Z",
+  "target": {
+   "image_manifest_digest": "sha256:80069ab6126f54e1956f45af09f1eb6f359cfd4a8595a69ac9f813a80ff1b55b",
+   "config_digest": "sha256:00dd8c7a1c807ea52e8505f99a5c0822a78e1c4cd4f611241f900a1008e1ab46",
+   "image": "readystack/zabbix:7.4.16-CE-ubuntu24.04-r5"
+  },
+  "checksummed_files": 14225
+ },
+ "files": [
+  {
+   "path": "BASES.tsv",
+   "size": 121,
+   "sha256": "c506d719c30d576fe42dd46d1cf2a9a05f4f3f364b41e02e4ffad3a1fc19500e",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "BUILD_OFFLINE.sh",
+   "size": 8856,
+   "sha256": "6ab4f08a6ec775b32d854f03413b30ecfe555ddba78cf0de956235f5a2a39542",
+   "lines": 162,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "CHECKSUMS.sha256",
+   "size": 1957383,
+   "sha256": "d5f66392079ca9e848454a7e57ad74e82f9b8f8d327219c5d270b13f9d73de27",
+   "lines": 14225,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "DOCKERFILE_NAME.txt",
+   "size": 26,
+   "sha256": "9aadd1ede68e016a6f163c97befc5ff2fcdc8ebd4f84b108dba63cb195fa8c84",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "Dockerfile",
+   "size": 5821,
+   "sha256": "d10793e4b8ba7540fa1552830bd58ea03d1af209d2dbab710317ffa798d34119",
+   "lines": 58,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline",
+   "size": 5821,
+   "sha256": "d10793e4b8ba7540fa1552830bd58ea03d1af209d2dbab710317ffa798d34119",
+   "lines": 58,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline.pinned",
+   "size": 5821,
+   "sha256": "d10793e4b8ba7540fa1552830bd58ea03d1af209d2dbab710317ffa798d34119",
+   "lines": 58,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "Dockerfile.vendor",
+   "size": 2548,
+   "sha256": "3ed5a00c422604d784e5713bf4ec5813f7e153bbf9fbece9b2b10220cd91dc4e",
+   "lines": 27,
+   "public": "account"
+  },
+  {
+   "path": "FILE_MODES.tsv",
+   "size": 1207266,
+   "sha256": "18d5b7c2877fafc1fbf018d5e5566d4d7e9605df3093a627dce83e5ac0e24c30",
+   "lines": 17006,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "MANIFEST.txt",
+   "size": 990113,
+   "sha256": "b0a25d9da79792fe6191ba3a7fe4a48809e7a603b6391b167209d6e328fed00d",
+   "lines": 14227,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "README.md",
+   "size": 3283,
+   "sha256": "bf4e3fca1e6b37156093a87b40ea86fce03d1f8abe49bbcc76e65d0fd808ea46",
+   "lines": 39,
+   "public": "account"
+  },
+  {
+   "path": "SOURCE_DATE_EPOCH.txt",
+   "size": 11,
+   "sha256": "6883aca412a62e93914b755cb260a09b72b9480b2289aa43e276f69065d75390",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "TARGET_DIGEST.txt",
+   "size": 476,
+   "sha256": "5eca9db654df00394d7da9d5abbe3f58662a0c1183c5ba4d5c7d977e29aa8b9d",
+   "lines": 9,
+   "public": "full"
+  },
+  {
+   "path": "VERIFY_OFFLINE.sh",
+   "size": 10153,
+   "sha256": "3e8184ea230cfd8f41f977e26be6bf7bd03112c396c517837ce0c7de4f7399dd",
+   "lines": 165,
+   "public": "account"
+  },
+  {
+   "path": "docs/PROVENANCE.md",
+   "size": 2578,
+   "sha256": "8391e686330f1978f6f3e850237b779d8e8103e93733147cbe4e97d484a3d745",
+   "lines": 36,
+   "public": "account"
+  },
+  {
+   "path": "docs/REBUILD.md",
+   "size": 6111,
+   "sha256": "a82fd7855a8304f621248ad035c70cbe09a648e7c262578313ae8cabdf495ef8",
+   "lines": 62,
+   "public": "account"
+  },
+  {
+   "path": "docs/VERIFY.md",
+   "size": 2022,
+   "sha256": "78691184e87eafd8d4851e43f658e64531536800ca86b7ead6f3c055b8ebac6d",
+   "lines": 34,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/BASE_IMAGE_DIGESTS.lock",
+   "size": 49,
+   "sha256": "1e09fe3fa2d7983917ffeaee44f776305efa4aa9caed6473fa7e64d401f5eeb2",
+   "lines": 2,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/BUILD_RECIPE.json",
+   "size": 6281,
+   "sha256": "ad74876e9d0c30f399041bf576a3adf0aefdaa7053d06138e170f9ea8881a1f3",
+   "lines": 91,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/CUSTODY_INPUTS.json",
+   "size": 644,
+   "sha256": "2f08f502881f1e5049a771e4c79e0442210944d6ad0abdcc3a6a2ef789bee08c",
+   "lines": 17,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_FILE_MANIFEST.json",
+   "size": 251160,
+   "sha256": "8463026f0b503d7f7aa2d801cb961418b069c75b33eb59d74973100bb4eb992e",
+   "lines": 5007,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_TREE_HASH.json",
+   "size": 302,
+   "sha256": "3e06ed80dd8671d714e8ee8a662316e9ecb8002d1d990dc5a4f6a98282cc013d",
+   "lines": 9,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/SYSTEM_PINNING.lock",
+   "size": 281,
+   "sha256": "33bc7bc47ce9a289b55041d45c90bdf961153cf0cae727e9276929224fff0d8a",
+   "lines": 23,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/TOOLCHAIN.lock",
+   "size": 5780,
+   "sha256": "d7c2b6ebed038343207ecdd41c344625c22c5f758419634c83bcb0e50595a0b7",
+   "lines": 163,
+   "public": "account"
+  },
+  {
+   "path": "rebuild.json",
+   "size": 1212,
+   "sha256": "eb25b65cf2e1fda16e0b307ba9f7d71be996702e7fba0849d7e2b685998c629d",
+   "lines": 31,
+   "public": "account"
+  },
+  {
+   "path": "toolchain/BUILDKIT_TAG.txt",
+   "size": 22,
+   "sha256": "fcd530eeb02b063d2f047adad6eef896422a8e8d558513e5f09b2a262be32573",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "zabbix-entrypoint.sh",
+   "size": 2730,
+   "sha256": "9f2522da1c746b125792ed5dd641ea173bc48423cc40ad85302d5cc2c7bcd779",
+   "lines": 68,
+   "public": "account"
+  }
+ ],
+ "skipped": [],
+ "kit_adds": {
+  "bases": {
+   "files": 5,
+   "bytes": 29796854
+  },
+  "docs": {
+   "files": 6947,
+   "bytes": 324018817
+  },
+  "toolchain": {
+   "files": 1,
+   "bytes": 111529472
+  },
+  "vendored": {
+   "files": 7247,
+   "bytes": 467389302
+  }
+ },
+ "redacted_files": 0
+}

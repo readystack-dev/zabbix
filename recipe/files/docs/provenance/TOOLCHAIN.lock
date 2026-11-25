@@ -1,0 +1,163 @@
+{
+  "apt_refresh": [
+    {
+      "min_version": "2.8.4ubuntu0.1",
+      "package": "apt",
+      "reason": "CVE-2026-109518: apt 2.8.3 -> 2.8.4ubuntu0.1"
+    },
+    {
+      "min_version": "2.8.4ubuntu0.1",
+      "package": "libapt-pkg6.0t64",
+      "reason": "CVE-2026-109518: libapt-pkg6.0t64 2.8.3 -> 2.8.4ubuntu0.1"
+    },
+    {
+      "min_version": "10.42-4ubuntu2.2",
+      "package": "libpcre2-8-0",
+      "reason": "CVE-2026-103111, CVE-2026-86145, CVE-2026-89156, CVE-2026-89157 \u2026: libpcre2-8-0 10.42-4ubuntu2.1 -> 10.42-4ubuntu2.2"
+    },
+    {
+      "min_version": "5.9.4+dfsg-1.1ubuntu3.3",
+      "package": "libsnmp-base",
+      "reason": "CVE-2026-89147: libsnmp-base 5.9.4+dfsg-1.1ubuntu3.2 -> 5.9.4+dfsg-1.1ubuntu3.3"
+    },
+    {
+      "min_version": "5.9.4+dfsg-1.1ubuntu3.3",
+      "package": "libsnmp40t64",
+      "reason": "CVE-2026-89147: libsnmp40t64 5.9.4+dfsg-1.1ubuntu3.2 -> 5.9.4+dfsg-1.1ubuntu3.3"
+    },
+    {
+      "min_version": "5.38.2-3.2ubuntu0.7",
+      "package": "libperl5.38t64",
+      "reason": "USN-9006-1: libperl5.38t64 5.38.2-3.2ubuntu0.6 -> 5.38.2-3.2ubuntu0.7"
+    },
+    {
+      "min_version": "5.38.2-3.2ubuntu0.7",
+      "package": "perl",
+      "reason": "USN-9006-1: perl 5.38.2-3.2ubuntu0.6 -> 5.38.2-3.2ubuntu0.7"
+    },
+    {
+      "min_version": "5.38.2-3.2ubuntu0.7",
+      "package": "perl-base",
+      "reason": "USN-9006-1: perl-base 5.38.2-3.2ubuntu0.6 -> 5.38.2-3.2ubuntu0.7"
+    },
+    {
+      "min_version": "5.38.2-3.2ubuntu0.7",
+      "package": "perl-modules-5.38",
+      "reason": "USN-9006-1: perl-modules-5.38 5.38.2-3.2ubuntu0.6 -> 5.38.2-3.2ubuntu0.7"
+    },
+    {
+      "min_version": "2.39-0ubuntu8.12",
+      "package": "libc-bin",
+      "reason": "CVE-2026-18374, CVE-2026-84243, CVE-2026-8674, CVE-2026-86805 \u2026: libc-bin 2.39-0ubuntu8.9 -> 2.39-0ubuntu8.12"
+    },
+    {
+      "min_version": "2.39-0ubuntu8.12",
+      "package": "libc6",
+      "reason": "CVE-2026-18374, CVE-2026-84243, CVE-2026-8674, CVE-2026-86805 \u2026: libc6 2.39-0ubuntu8.9 -> 2.39-0ubuntu8.12"
+    },
+    {
+      "min_version": "0.10.6-2ubuntu0.6",
+      "package": "libssh-4",
+      "reason": "USN-9187-1: libssh-4 0.10.6-2ubuntu0.5 -> 0.10.6-2ubuntu0.6"
+    }
+  ],
+  "build_method": "source-rebuild-c",
+  "chain_id": 1240,
+  "dep_bumps": [],
+  "expected_residuals": [],
+  "images": [
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "builder"
+    },
+    {
+      "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+      "ref": "ubuntu:24.04",
+      "role": "base"
+    }
+  ],
+  "mod_replaces": [],
+  "runtime_packages": [
+    "ca-certificates",
+    "tzdata",
+    "gzip",
+    "libcares2",
+    "libcurl4t64",
+    "libevent-2.1-7t64",
+    "libevent-extra-2.1-7t64",
+    "libevent-pthreads-2.1-7t64",
+    "libopenipmi0t64",
+    "libpcre2-8-0",
+    "libpq5",
+    "libsnmp40t64",
+    "libssh-4",
+    "libssl3t64",
+    "libxml2",
+    "libmodbus5",
+    "libldap2",
+    "libodbc2",
+    "unixodbc",
+    "zlib1g",
+    "fping",
+    "iputils-ping",
+    "postgresql-client-16"
+  ],
+  "schema": "kitforge.toolchain_lock.v1",
+  "slug": "zabbix",
+  "source": {
+    "build_cmds": [
+      "./configure --prefix=/opt/zabbix --sysconfdir=/etc/zabbix --enable-server --enable-agent --enable-ipv6 --with-postgresql --with-openssl --with-net-snmp --with-ssh --with-ldap --with-libcurl=/usr/bin/curl-config --with-libpcre2 --with-libxml2 --with-openipmi --with-libmodbus --with-ares --with-unixodbc --silent",
+      "make -j\"$(nproc)\" -s dbschema",
+      "make -j\"$(nproc)\" -s",
+      "make -s install",
+      "rm -f /opt/zabbix/sbin/zabbix_agentd /opt/zabbix/share/man/man8/zabbix_agentd.8 && strip /opt/zabbix/sbin/zabbix_server /opt/zabbix/bin/zabbix_get /opt/zabbix/bin/zabbix_sender",
+      "mkdir -p /opt/zabbix/share/zabbix/database/postgresql && cat database/postgresql/schema.sql database/postgresql/images.sql database/postgresql/data.sql | gzip -9n > /opt/zabbix/share/zabbix/database/postgresql/create.sql.gz && cp COPYING /opt/zabbix/share/zabbix/COPYING"
+    ],
+    "build_env": {
+      "CFLAGS": "-O2 -pipe -fPIE -fstack-protector-strong -fstack-clash-protection -D_FORTIFY_SOURCE=3 -Wformat -Werror=format-security",
+      "LDFLAGS": "-pie -Wl,-z,relro,-z,now,-z,defs -Wl,--as-needed",
+      "PERL_HASH_SEED": "0",
+      "PERL_PERTURB_KEYS": "0"
+    },
+    "build_packages": [
+      "gcc",
+      "libc6-dev",
+      "make",
+      "autoconf",
+      "automake",
+      "pkg-config",
+      "perl",
+      "binutils",
+      "libpq-dev",
+      "libssl-dev",
+      "libsnmp-dev",
+      "libssh-dev",
+      "libxml2-dev",
+      "libopenipmi-dev",
+      "libmodbus-dev",
+      "libldap-dev",
+      "unixodbc-dev",
+      "zlib1g-dev",
+      "libc-ares-dev",
+      "libcurl4-openssl-dev",
+      "libevent-dev",
+      "libpcre2-dev"
+    ],
+    "build_system": "autoconf-make",
+    "builder_image": "ubuntu:24.04",
+    "commit": "b90dda2ec5983a92c9671550b5e32947cf241cd2",
+    "commit_epoch": 1792496804,
+    "install_prefix": "/opt/zabbix",
+    "ref": "7.4.16",
+    "repo": "https://github.com/zabbix/zabbix",
+    "source_date_epoch": 1795543300,
+    "source_date_epoch_basis": "release-cut",
+    "source_date_epoch_provenance": "the time release 7.4.16-CE-ubuntu24.04-r5 was cut (2026-11-24T18:01:40Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit b90dda2ec598, dated 2026-10-20T11:46:44Z (source.commit_epoch).",
+    "source_prep": [
+      "sed -i 's/{ZABBIX_REVISION}/@COMMIT:10@/g' include/version.h",
+      "./bootstrap.sh"
+    ]
+  },
+  "version": "7.4.16"
+}

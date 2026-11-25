@@ -1,0 +1,9 @@
+{
+  "schema": "kitforge.source_tree_hash.v1",
+  "slug": "zabbix",
+  "repo": "https://github.com/zabbix/zabbix",
+  "ref": "7.4.16",
+  "commit": "b90dda2ec5983a92c9671550b5e32947cf241cd2",
+  "tree_listing_sha256": "1f86bf79232abe846e52688eac4f5fd49ca1d82f943844e1a342e0094ec5f931",
+  "file_count": 6887
+}
