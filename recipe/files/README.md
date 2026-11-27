@@ -1,14 +1,16 @@
-# Build kit for `readystack/zabbix:7.4.16-CE-ubuntu24.04-r5`
+# Build kit for `readystack/zabbix:7.4.16-CE-ubuntu24.04-r6`
 
-This archive rebuilds the linux/amd64 image `readystack/zabbix:7.4.16-CE-ubuntu24.04-r5` from its own contents, with the network off, and checks the result against the image digest ReadyStack published, `sha256:80069ab6126f54e1956f45af09f1eb6f359cfd4a8595a69ac9f813a80ff1b55b` (also in `TARGET_DIGEST.txt`). It holds everything the build needs, not the image itself.
+This archive rebuilds the linux/amd64 image `readystack/zabbix:7.4.16-CE-ubuntu24.04-r6` from its own contents, with the network off, and checks the result against the image digest ReadyStack published, `sha256:3a9714e460e17adbbd211c0d2a35e78e79a297d0fff53edf02680eba8b35291c` (also in `TARGET_DIGEST.txt`). It holds everything the build needs, not the image itself.
+
+Every release of this kit, its recipe and its defect issues are published at https://github.com/readystack-dev/zabbix; the product page is https://readystack.dev/products/zabbix.
 
 ## Rebuild it
 
 You need linux/amd64 Docker with `buildx` 0.30 or later, `jq` and `tar` (docs/REBUILD.md lists the rest, if any, and the hardware ReadyStack used).
 
 ```
-tar -xpzf ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r5.tar.gz    # -p keeps each file's mode
-cd 7.4.16-CE-ubuntu24.04-r5
+tar -xpzf ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r6.tar.gz    # -p keeps each file's mode
+cd 7.4.16-CE-ubuntu24.04-r6
 ./BUILD_OFFLINE.sh            # builds with the network off, from this archive alone
 ./VERIFY_OFFLINE.sh           # compares the rebuilt digest with the published one, then checks the image
 ```
@@ -23,8 +25,8 @@ ReadyStack signs this archive's `rebuild.json` with its release key once the fin
 
 ```
 curl -fsSLo ../cosign.pub https://readystack.dev/keys/cosign.pub
-curl -fsSLo ../ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r5.rebuild.json.sigstore https://readystack.dev/api/kit/zabbix/7.4.16-CE-ubuntu24.04-r5/files/ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r5.rebuild.json.sigstore
-python3 docs/rebuild-bundle/rebuild_bundle.py validate . --key ../cosign.pub --signature ../ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r5.rebuild.json.sigstore
+curl -fsSLo ../ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r6.rebuild.json.sigstore https://readystack.dev/api/kit/zabbix/7.4.16-CE-ubuntu24.04-r6/files/ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r6.rebuild.json.sigstore
+python3 docs/rebuild-bundle/rebuild_bundle.py validate . --key ../cosign.pub --signature ../ReadyStack-zabbix-7.4.16-CE-ubuntu24.04-r6.rebuild.json.sigstore
 ```
 
 `validate` needs Python 3 and cosign. Without building anything it checks the signature over `rebuild.json`, every file's checksum, the tree hash over every file's path, mode and content, each base image layout's digest and the builder archive. `verify`, with the same arguments, also rebuilds with the builder's network egress blocked and exits 0 only when the rebuilt digest is the published one (docs/REBUILD.md).

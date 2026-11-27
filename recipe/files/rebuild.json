@@ -16,16 +16,16 @@
     "context": ".",
     "dockerfile": "Dockerfile.offline.pinned",
     "mtime_policy": "clamp",
-    "source_date_epoch": 1795543300,
-    "tree_hash": "sha256:49b03f81aac665b63e8c2e284bea4795de38ad8ae876603640f3f17d271e30c8"
+    "source_date_epoch": 1795672829,
+    "tree_hash": "sha256:a16225c4193ee9f06580c00c0637badb1a429fbcde23b4aaec2831398d446113"
   },
   "probe": {
     "skip": "this image needs pg (not part of this archive); boot it with your own services as the admin handbook describes"
   },
   "schema": "readystack-rebuild-bundle/v0.1",
   "subject": {
-    "config_digest": "sha256:00dd8c7a1c807ea52e8505f99a5c0822a78e1c4cd4f611241f900a1008e1ab46",
-    "image_manifest_digest": "sha256:80069ab6126f54e1956f45af09f1eb6f359cfd4a8595a69ac9f813a80ff1b55b",
-    "name": "docker.io/readystack/zabbix:7.4.16-CE-ubuntu24.04-r5"
+    "config_digest": "sha256:266a123d33bdccf3b5007a57162368a834848c14188b3bcf52ead7444c2ae1d6",
+    "image_manifest_digest": "sha256:3a9714e460e17adbbd211c0d2a35e78e79a297d0fff53edf02680eba8b35291c",
+    "name": "docker.io/readystack/zabbix:7.4.16-CE-ubuntu24.04-r6"
   }
 }

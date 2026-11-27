@@ -59,10 +59,30 @@
       "min_version": "0.10.6-2ubuntu0.6",
       "package": "libssh-4",
       "reason": "USN-9187-1: libssh-4 0.10.6-2ubuntu0.5 -> 0.10.6-2ubuntu0.6"
+    },
+    {
+      "min_version": "1.20.1-6ubuntu2.12",
+      "package": "libgssapi-krb5-2",
+      "reason": "USN-9202-1: libgssapi-krb5-2 1.20.1-6ubuntu2.10 -> 1.20.1-6ubuntu2.12"
+    },
+    {
+      "min_version": "1.20.1-6ubuntu2.12",
+      "package": "libk5crypto3",
+      "reason": "USN-9202-1: libk5crypto3 1.20.1-6ubuntu2.10 -> 1.20.1-6ubuntu2.12"
+    },
+    {
+      "min_version": "1.20.1-6ubuntu2.12",
+      "package": "libkrb5-3",
+      "reason": "USN-9202-1: libkrb5-3 1.20.1-6ubuntu2.10 -> 1.20.1-6ubuntu2.12"
+    },
+    {
+      "min_version": "1.20.1-6ubuntu2.12",
+      "package": "libkrb5support0",
+      "reason": "USN-9202-1: libkrb5support0 1.20.1-6ubuntu2.10 -> 1.20.1-6ubuntu2.12"
     }
   ],
   "build_method": "source-rebuild-c",
-  "chain_id": 1240,
+  "chain_id": 1294,
   "dep_bumps": [],
   "expected_residuals": [],
   "images": [
@@ -151,9 +171,9 @@
     "install_prefix": "/opt/zabbix",
     "ref": "7.4.16",
     "repo": "https://github.com/zabbix/zabbix",
-    "source_date_epoch": 1795543300,
+    "source_date_epoch": 1795672829,
     "source_date_epoch_basis": "release-cut",
-    "source_date_epoch_provenance": "the time release 7.4.16-CE-ubuntu24.04-r5 was cut (2026-11-24T18:01:40Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit b90dda2ec598, dated 2026-10-20T11:46:44Z (source.commit_epoch).",
+    "source_date_epoch_provenance": "the time release 7.4.16-CE-ubuntu24.04-r6 was cut (2026-11-26T06:00:29Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit b90dda2ec598, dated 2026-10-20T11:46:44Z (source.commit_epoch).",
     "source_prep": [
       "sed -i 's/{ZABBIX_REVISION}/@COMMIT:10@/g' include/version.h",
       "./bootstrap.sh"

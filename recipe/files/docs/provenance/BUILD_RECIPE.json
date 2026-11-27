@@ -1,14 +1,14 @@
 {
   "schema": "kitforge.build_recipe.v1",
   "slug": "zabbix",
-  "image": "readystack/zabbix:7.4.16-CE-ubuntu24.04-r5",
+  "image": "readystack/zabbix:7.4.16-CE-ubuntu24.04-r6",
   "build_method": "source-rebuild-c",
   "source": {
     "repo": "https://github.com/zabbix/zabbix",
     "ref": "7.4.16",
     "commit": "b90dda2ec5983a92c9671550b5e32947cf241cd2",
-    "source_date_epoch": 1795543300,
-    "source_date_epoch_provenance": "the time release 7.4.16-CE-ubuntu24.04-r5 was cut (2026-11-24T18:01:40Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit b90dda2ec598, dated 2026-10-20T11:46:44Z (source.commit_epoch).",
+    "source_date_epoch": 1795672829,
+    "source_date_epoch_provenance": "the time release 7.4.16-CE-ubuntu24.04-r6 was cut (2026-11-26T06:00:29Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit b90dda2ec598, dated 2026-10-20T11:46:44Z (source.commit_epoch).",
     "_version_note": "7.4.16 is the highest GA tag on github.com/zabbix/zabbix (the git.zabbix.com mirror) on 2026-10-22 (tag commit b90dda2ec598, 2026-10-20): 7.4.16rc1 and 8.0.0alpha1/alpha2/beta1/beta2/rc1/rc2 are pre-releases. 8.0 is an LTS line; retarget when 8.0.0 is GA. Retargeted from 7.4.15 (authored 2026-10-10, never released) by scripts/retarget.py on 2026-10-22 (owner 2026-10-22, RELEASE_POLICY.md s4: the former owner hold moves to upstream's latest release; the server-only listing stays as authored).",
     "builder_image": "ubuntu:24.04",
     "build_system": "autoconf-make",

@@ -1,6 +1,6 @@
-image_manifest_digest=sha256:80069ab6126f54e1956f45af09f1eb6f359cfd4a8595a69ac9f813a80ff1b55b
-config_digest=sha256:00dd8c7a1c807ea52e8505f99a5c0822a78e1c4cd4f611241f900a1008e1ab46
-tag=readystack/zabbix:7.4.16-CE-ubuntu24.04-r5
+image_manifest_digest=sha256:3a9714e460e17adbbd211c0d2a35e78e79a297d0fff53edf02680eba8b35291c
+config_digest=sha256:266a123d33bdccf3b5007a57162368a834848c14188b3bcf52ead7444c2ae1d6
+tag=readystack/zabbix:7.4.16-CE-ubuntu24.04-r6
 probe_port=10051
 probe_path=/
 probe_timeout=180
